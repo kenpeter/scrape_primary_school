@@ -1,3 +1,3 @@
 ## Intro
 
-Scrape this site: http://www.topscores.info/report.php?z=Vic&req=vce-school-rank-median-vce&year=2016&sortBy=n10&pageno=1
+Scrape this site: https://bettereducation.com.au/school/Primary/vic/melbourne_top_government_primary_schools.aspx
