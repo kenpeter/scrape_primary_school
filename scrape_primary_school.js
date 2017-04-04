@@ -54,17 +54,36 @@ function buildArr() {
             let regex = /^(.*)\D+(\d+)\D+(\d+)\D+(\d+)$/;
             let match = regex.exec(row);
 
-            let schooName = match[1];
+            //test
+            /*
+            console.log('--- one zero ---');
+            console.log(match);
+            */
+
+            let schoolName = match[1];
             let postCode = match[2];
             let score = match[3];
             let enrolNum = match[4];
 
             /*
-            console.log(schooName);
+            console.log('--- one ---');
+            console.log(schoolName);
             console.log(postCode);
             console.log(score);
             console.log(enrolNum);
             */
+
+            let obj = {
+              schoolName: schoolName,
+              postCode: postCode,
+              score: score,
+              latLng: {},
+
+              enrolNum: enrolNum,
+              year: 2016, // hardcode ................!!!!!!!!!!!!!!!!
+            }
+
+            schoolArr.push(obj);
           }
 
           resolve();
@@ -87,7 +106,8 @@ function buildActualLocation() {
       //console.log(school.schoolName);
 
       if(school.schoolName !== undefined) {
-        geocoder.geocode(school.schoolName + ' Victoria Australia')
+        let schoolName = buildSchoolName(school.schoolName);
+        geocoder.geocode(schoolName)
           .then(function(res) {
             //console.log(res);
             if(res[0]) {
@@ -95,7 +115,7 @@ function buildActualLocation() {
               let lat = res[0].latitude;
               let lng = res[0].longitude;
 
-              school.location = formattedAddress;
+              school.schoolName = schoolName;
               school.latLng = { lat: lat, lng: lng };
 
               schoolDAO
@@ -107,7 +127,7 @@ function buildActualLocation() {
             }
             else {
               console.error('no such addr');
-              console.log(school.schoolName + ' Victoria Australia');
+              console.log(schoolName);
               resolve();
             }
 
@@ -125,8 +145,29 @@ function buildActualLocation() {
 
 }
 
+
+function buildSchoolName(schoolName) {
+  if(schoolName.indexOf('VIC') != -1) {
+    return schoolName;
+  }
+  else {
+    schoolName = schoolName + ' Victoria Australia';
+    return schoolName;
+  }
+}
+
+
 // Run
-buildArr().then(() => {
-  console.log('-- all done --');
-  process.exit(0);
-});
+schoolDAO
+  .delete()
+  .then(() => {
+    return buildArr();
+  })
+  .then(() => {
+    return buildActualLocation();
+  })
+  .then(() => {
+    console.log('---- all done ----');
+    console.log(schoolArr);
+    process.exit(0);
+  });

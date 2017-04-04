@@ -4,9 +4,9 @@ var Schema = mongodb.mongoose.Schema;
 
 var SchoolSchema = new Schema({
   schoolName: String,
-  postcode: String,
+  postCode: String,
   score: Number,
-  latLng: { lat: Number, lng: Number},
+  latLng: { lat: Number, lng: Number },
 
   enrolNum: Number,
   year: Number,
