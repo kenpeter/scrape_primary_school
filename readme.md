@@ -20,4 +20,4 @@ The back-end pulls data from MongoDB and supplies data via API. (Uising Mongo an
 
 Front-end uses Redux, Mobx and Google map to display data.
 
-[alt img](https://github.com/kenpeter/scrape_primary_school/blob/master/misc/scrape_primary_school.png)
+![alt img](https://github.com/kenpeter/scrape_primary_school/blob/raw/misc/scrape_primary_school.png)
