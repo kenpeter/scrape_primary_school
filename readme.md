@@ -19,3 +19,5 @@ We scrape some data from [https://bettereducation.com.au/school/Primary/vic/melb
 The back-end pulls data from MongoDB and supplies data via API. (Uising Mongo and Express)
 
 Front-end uses Redux, Mobx and Google map to display data.
+
+[alt img](https://github.com/kenpeter/scrape_primary_school/blob/master/misc/scrape_primary_school.png)
