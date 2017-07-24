@@ -10,4 +10,5 @@ Demo: [http://schoolfront1.shopshop.space/](http://schoolfront1.shopshop.space/)
 # Design
 There are 3 sub projects for this website.
 * Utility to scrape data: [https://github.com/kenpeter/scrape_primary_school](https://github.com/kenpeter/scrape_primary_school)
-* Back-end: 
+* Back-end: [https://github.com/kenpeter/scrape_primary_school_back](https://github.com/kenpeter/scrape_primary_school_back)
+* Front-end: [https://github.com/kenpeter/scrape_primary_school_front](https://github.com/kenpeter/scrape_primary_school_front)
