@@ -25,12 +25,15 @@ Front-end uses Redux, Mobx and Google map to display data.
 # Install
 Scrapper: 
 ```git clone https://github.com/kenpeter/scrape_primary_school.git```
+
 ```yarn install```
 
 Front-end:
 ```git clone https://github.com/kenpeter/scrape_primary_school_front.git```
+
 ```yarn install```
 
 Back-end:
 ```git clone https://github.com/kenpeter/scrape_primary_school_back.git```
+
 ```yarn install```
